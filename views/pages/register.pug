@@ -1,0 +1,135 @@
+doctype html
+//
+  =========================================================
+  * Argon Dashboard - v1.2.0
+  =========================================================
+  * Product Page: https://www.creative-tim.com/product/argon-dashboard
+  * Copyright  Creative Tim (http://www.creative-tim.com)
+  * Coded by www.creative-tim.com
+  =========================================================
+  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='Start your development with a Dashboard for Bootstrap 4.')
+  meta(name='author' content='Creative Tim')
+  title Blog Training 
+  // Favicon
+  link(rel='icon' href='/assets/img/brand/favicon.png' type='image/png')
+  // Fonts
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')
+  // Icons
+  link(rel='stylesheet' href='/assets/vendor/nucleo/css/nucleo.css' type='text/css')
+  link(rel='stylesheet' href='/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' type='text/css')
+  // Argon CSS
+  link(rel='stylesheet' href='/assets/css/argon.css?v=1.2.0' type='text/css')
+// Navbar
+
+// Main content
+.main-content
+  // Header
+  .header.bg-gradient-primary.py-7.py-lg-5.pt-lg-5
+    .container
+      .header-body.text-center.mb-7
+        .row.justify-content-center
+          .col-xl-5.col-lg-6.col-md-8.px-5
+            h1.text-white Create an account
+            p.text-lead.text-white Use these awesome forms to login or create new account in your project for free.
+    .separator.separator-bottom.separator-skew.zindex-100
+      svg(x='0' y='0' viewbox='0 0 2560 100' preserveaspectratio='none' version='1.1' xmlns='http://www.w3.org/2000/svg')
+        polygon.fill-default(points='2560 0 2560 100 0 100')
+  // Page content
+  .container.mt--8.pb-5
+    // Table
+    .row.justify-content-center
+      .col-lg-6.col-md-8
+        .card.bg-secondary.border-0
+          .card-header.bg-transparent.pb-5
+            .text-muted.text-center.mt-2.mb-4
+              small Sign up with
+            .text-center
+              a.btn.btn-neutral.btn-icon.mr-4(href='#')
+                span.btn-inner--icon
+                  img(src='/assets/img/icons/common/github.svg')
+                span.btn-inner--text Github
+              a.btn.btn-neutral.btn-icon(href='#')
+                span.btn-inner--icon
+                  img(src='/assets/img/icons/common/google.svg')
+                span.btn-inner--text Google
+          .card-body.px-lg-5.py-lg-5
+            .text-center.text-muted.mb-4
+              small Or sign up with credentials
+            form(role='form' id="register-form")
+              .form-group
+                .input-group.input-group-merge.input-group-alternative.mb-3
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-hat-3
+                  input#fullname.form-control(placeholder='Full name' type='text')
+              .form-group
+                .input-group.input-group-merge.input-group-alternative.mb-3
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-hat-3
+                  input#user_username.form-control(placeholder='Username' type='text')
+              .form-group
+                .input-group.input-group-merge.input-group-alternative.mb-3
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-email-83
+                  input#user_email.form-control(placeholder='Email' type='email')
+              .form-group
+                .input-group.input-group-merge.input-group-alternative
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-lock-circle-open
+                  input#user_password.form-control(placeholder='Password' type='password')
+              .form-group
+                .input-group.input-group-merge.input-group-alternative
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-lock-circle-open
+                  input#confirm_password.form-control(placeholder='Confirm password' type='password')
+              .text-muted.font-italic
+                small
+                  | password strength: 
+                  span.text-success.font-weight-700 strong
+              .row.my-4
+                .col-12
+                  .custom-control.custom-control-alternative.custom-checkbox
+                    input#customCheckRegister.custom-control-input(type='checkbox')
+                    label.custom-control-label(for='customCheckRegister')
+                      span.text-muted
+                        | I agree with the 
+                        a(href='#!') Privacy Policy
+              .text-center
+                button.btn.btn-primary.mt-4(type='submit') Create account
+// Footer
+footer#footer-main.py-5
+  .container
+    .row.align-items-center.justify-content-xl-between
+      .col-xl-6
+        .copyright.text-center.text-xl-left.text-muted
+          | &copy; 2020 
+          a.font-weight-bold.ml-1(href='https://www.creative-tim.com' target='_blank') Creative Tim
+      .col-xl-6
+        ul.nav.nav-footer.justify-content-center.justify-content-xl-end
+          li.nav-item
+            a.nav-link(href='https://www.creative-tim.com' target='_blank') Creative Tim
+          li.nav-item
+            a.nav-link(href='https://www.creative-tim.com/presentation' target='_blank') About Us
+          li.nav-item
+            a.nav-link(href='http://blog.creative-tim.com' target='_blank') Blog
+          li.nav-item
+            a.nav-link(href='https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md' target='_blank') MIT License
+// Argon Scripts
+// Core
+script(src='/route/require-login.js')
+script(src='/auth/register.js')
+script(src='/assets/vendor/jquery/dist/jquery.min.js')
+script(src='/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')
+script(src='/assets/vendor/js-cookie/js.cookie.js')
+script(src='/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')
+script(src='/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')
+// Argon JS
+script(src='/assets/js/argon.js')

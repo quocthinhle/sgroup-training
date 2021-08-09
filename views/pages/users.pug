@@ -1,0 +1,92 @@
+extends ../layout/main.pug
+
+block css 
+  link 
+  
+block header
+  .header.bg-primary.pb-6
+    .container-fluid
+      .header-body
+        .row.align-items-center.py-4
+          .col-lg-6.col-7
+            h6.h2.text-white.d-inline-block.mb-0 Tables
+            nav.d-none.d-md-inline-block.ml-md-4(aria-label='breadcrumb')
+              ol.breadcrumb.breadcrumb-links.breadcrumb-dark
+                li.breadcrumb-item
+                  a(href='#')
+                    i.fas.fa-home
+                li.breadcrumb-item
+                  a(href='#') Tables
+                li.breadcrumb-item.active(aria-current='page') Tables
+          .col-lg-6.col-5.text-right
+            a.btn.btn-sm.btn-neutral(href='#') New
+            a.btn.btn-sm.btn-neutral(href='#') Filters
+
+block content
+  .container-fluid.mt--6
+    .row
+      .col
+        .card
+          // Card header
+          .card-header.border-0
+            h3.mb-0 User List
+          // Light table
+          .row(style="width: 95%; margin: 0 auto; margin-bottom: 1rem; display: flex; align-items: center;")
+            .col
+              input.form-control.form-control-alternative(type='text' placeholder='Fullname / Username' id="searchContent")
+            .col-md-auto
+              select(id="perPage").media.align-items-center
+                option(value='5').dropdown-item Item per page (5)
+                option(value='10').dropdown-item 10
+                option(value='20').dropdown-item 20
+                option(value='50').dropdown-item 50
+
+          
+            .col-md-auto
+              select(id="sort-type").media.align-items-center
+                option(value='none').dropdown-item Sort type (Default)
+                option(value='fullname-abc').dropdown-item Name &darr;
+                option(value='fullname-cba').dropdown-item Name &uarr;
+                option(value='username-abc').dropdown-item Username &darr;
+                option(value='username-cba').dropdown-item Username &uarr;
+
+            .col.col-lg-2
+                button.btn.btn-success.btn-sm(type='button' id="apply-btn") Apply
+
+          .table-responsive
+            table#user_table.table.align-items-center.table-flush
+              thead.thead-light
+                tr
+                  th.sort(scope='col' data-sort='name') STT
+                  th.sort(scope='col' data-sort='name') Id
+                  th.sort(scope='col' data-sort='budget') Username
+                  th.sort(scope='col' data-sort='status') Fullname
+                  th.sort(scope='col' data-sort='status') Status
+                  th.sort(scope='col' data-sort='status') Roles
+              tbody.list
+                
+          // Card footer
+          .card-footer.py-4
+            nav(aria-label='...')
+              ul.pagination.justify-content-end.mb-0
+                li.page-item.disabled
+                  a.page-link(href='#' tabindex='-1')
+                    i.fas.fa-angle-left
+                    span.sr-only Previous
+                li.page-item.active
+                  a.page-link(href='#') 1
+                li.page-item
+                  a.page-link(href='#')
+                    | 2 
+                    span.sr-only (current)
+                li.page-item
+                  a.page-link(href='#') 3
+                li.page-item
+                  a.page-link(href='#')
+                    i.fas.fa-angle-right
+                    span.sr-only Next
+    include ../components/footer.pug
+
+block scripts
+  script(src='/pages/users.js') 
+    

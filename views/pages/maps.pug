@@ -1,0 +1,45 @@
+extends ../layout/main.pug
+
+block header
+  .header.bg-primary.pb-6
+    .container-fluid
+      .header-body
+        .row.align-items-center.py-4
+          .col-lg-6.col-7
+            h6.h2.text-white.d-inline-block.mb-0 Google maps
+            nav.d-none.d-md-inline-block.ml-md-4(aria-label='breadcrumb')
+              ol.breadcrumb.breadcrumb-links.breadcrumb-dark
+                li.breadcrumb-item
+                  a(href='#')
+                    i.fas.fa-home
+                li.breadcrumb-item
+                  a(href='#') Maps
+                li.breadcrumb-item.active(aria-current='page') Google maps
+          .col-lg-6.col-5.text-right
+            a.btn.btn-sm.btn-neutral(href='#') New
+            a.btn.btn-sm.btn-neutral(href='#') Filters
+
+block content
+  .container-fluid.mt--6
+    .row
+      .col
+        .card.border-0
+          #map-default.map-canvas(data-lat='40.748817' data-lng='-73.985428' style='height: 600px;')
+    // Footer
+    footer.footer.pt-0
+      .row.align-items-center.justify-content-lg-between
+        .col-lg-6
+          .copyright.text-center.text-lg-left.text-muted
+            | &copy; 2020 
+            a.font-weight-bold.ml-1(href='https://www.creative-tim.com' target='_blank') Creative Tim
+        .col-lg-6
+          ul.nav.nav-footer.justify-content-center.justify-content-lg-end
+            li.nav-item
+              a.nav-link(href='https://www.creative-tim.com' target='_blank') Creative Tim
+            li.nav-item
+              a.nav-link(href='https://www.creative-tim.com/presentation' target='_blank') About Us
+            li.nav-item
+              a.nav-link(href='http://blog.creative-tim.com' target='_blank') Blog
+            li.nav-item
+              a.nav-link(href='https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md' target='_blank') MIT License
+    include ../components/footer.pug

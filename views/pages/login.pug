@@ -1,0 +1,103 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='Start your development with a Dashboard for Bootstrap 4.')
+  meta(name='author' content='Creative Tim')
+  meta(name='google-signin-client_id' content='642110060368-7eg8b0ear3e3hrb60bmg0r7s4q6stltv.apps.googleusercontent.com')
+
+  title Blog Training
+  // Favicon
+  link(rel='icon' href='/assets/img/brand/favicon.png' type='image/png')
+  // Fonts
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')
+  // Icons
+  link(rel='stylesheet' href='/assets/vendor/nucleo/css/nucleo.css' type='text/css')
+  link(rel='stylesheet' href='/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' type='text/css')
+  // Argon CSS
+  link(rel='stylesheet' href='/assets/css/argon.css?v=1.2.0' type='text/css')
+  script(src='https://apis.google.com/js/platform.js' async='' defer='')
+
+// Main content
+.main-content
+  // Header
+  .header.bg-gradient-primary.py-7.py-lg-7.pt-lg-1
+    .separator.separator-bottom.separator-skew.zindex-100
+      svg(x='0' y='0' viewbox='0 0 2560 100' preserveaspectratio='none' version='1.1' xmlns='http://www.w3.org/2000/svg')
+        polygon.fill-default(points='2560 0 2560 100 0 100')
+  // Page content
+  .container.mt--8.pb-5
+    .row.justify-content-center
+      .col-lg-5.col-md-7
+        .card.bg-secondary.border-0.mb-0
+          .card-header.bg-transparent.pb-5
+            .text-muted.text-center.mt-2.mb-3
+              small Sign in with
+            .btn-wrapper.text-center
+              a.btn.btn-neutral.btn-icon(href='#')
+                span.btn-inner--icon
+                  img(src='/assets/img/icons/common/github.svg')
+                span.btn-inner--text Github
+              .g-signin2(data-onsuccess='onSignIn')
+          .card-body.px-lg-5.py-lg-5
+            .text-center.text-muted.mb-4
+              small Or sign in with credentials
+            form(role='form' id='loginForm')
+              .form-group.mb-3
+                .input-group.input-group-merge.input-group-alternative
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-email-83
+                  input#user.form-control(placeholder='Username' type='text')
+              .form-group
+                .input-group.input-group-merge.input-group-alternative
+                  .input-group-prepend
+                    span.input-group-text
+                      i.ni.ni-lock-circle-open
+                  input#user_password.form-control(placeholder='Password' type='password')
+              .custom-control.custom-control-alternative.custom-checkbox
+                input#customCheckLogin.custom-control-input(type='checkbox')
+                label.custom-control-label(for=' customCheckLogin')
+                  span.text-muted Remember me
+              .text-center
+                button.btn.btn-primary.my-4(type='submit') Sign in
+        .row.mt-3
+          .col-6
+            a.text-light(href='#')
+              small Forgot password?
+          .col-6.text-right
+            a.text-light(href='/register')
+              small Create new account
+        
+
+// Footer
+footer#footer-main.py-5
+  .container
+    .row.align-items-center.justify-content-xl-between
+      .col-xl-6
+        .copyright.text-center.text-xl-left.text-muted
+          | &copy; 2020 
+          a.font-weight-bold.ml-1(href='https://www.creative-tim.com' target='_blank') Creative Tim
+      .col-xl-6
+        ul.nav.nav-footer.justify-content-center.justify-content-xl-end
+          li.nav-item
+            a.nav-link(href='https://www.creative-tim.com' target='_blank') Creative Tim
+          li.nav-item
+            a.nav-link(href='https://www.creative-tim.com/presentation' target='_blank') About Us
+          li.nav-item
+            a.nav-link(href='http://blog.creative-tim.com' target='_blank') Blog
+          li.nav-item
+            a.nav-link(href='https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md' target='_blank') MIT License
+// Argon Scripts
+// Core
+script(src='/route/require-login.js')
+script(src='/auth/login.js')
+script(src='/assets/vendor/jquery/dist/jquery.min.js')
+script(src='/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')
+script(src='/assets/vendor/js-cookie/js.cookie.js')
+script(src='/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')
+script(src='/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')
+// Argon JS
+script(src='/assets/js/argon.js')
+// Google authen
+

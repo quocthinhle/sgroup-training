@@ -1,0 +1,155 @@
+nav.navbar.navbar-top.navbar-expand.navbar-dark.bg-primary.border-bottom
+    .container-fluid
+      #navbarSupportedContent.collapse.navbar-collapse
+        // Search form
+        form#navbar-search-main.navbar-search.navbar-search-light.form-inline.mr-sm-3
+          .form-group.mb-0
+            .input-group.input-group-alternative.input-group-merge
+              .input-group-prepend
+                span.input-group-text
+                  i.fas.fa-search
+              input.form-control(placeholder='Search' type='text')
+          button.close(type='button' data-action='search-close' data-target='#navbar-search-main' aria-label='Close')
+            span(aria-hidden='true') &times;
+        // Navbar links
+        ul.navbar-nav.align-items-center.ml-md-auto
+          li.nav-item.d-xl-none
+            // Sidenav toggler
+            .pr-3.sidenav-toggler.sidenav-toggler-dark(data-action='sidenav-pin' data-target='#sidenav-main')
+              .sidenav-toggler-inner
+                i.sidenav-toggler-line
+                i.sidenav-toggler-line
+                i.sidenav-toggler-line
+          li.nav-item.d-sm-none
+            a.nav-link(href='#' data-action='search-show' data-target='#navbar-search-main')
+              i.ni.ni-zoom-split-in
+          li.nav-item.dropdown
+            a.nav-link(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              i.ni.ni-bell-55
+            .dropdown-menu.dropdown-menu-xl.dropdown-menu-right.py-0.overflow-hidden
+              // Dropdown header
+              .px-3.py-3
+                h6.text-sm.text-muted.m-0
+                  | You have 
+                  strong.text-primary 13
+                  |  notifications.
+              // List group
+              .list-group.list-group-flush
+                a.list-group-item.list-group-item-action(href='#!')
+                  .row.align-items-center
+                    .col-auto
+                      // Avatar
+                      img.avatar.rounded-circle(alt='Image placeholder' src='/assets/img/theme/team-1.jpg')
+                    .col.ml--2
+                      .d-flex.justify-content-between.align-items-center
+                        div
+                          h4.mb-0.text-sm Quoc Thinh Le
+                        .text-right.text-muted
+                          small 2 hrs ago
+                      p.text-sm.mb-0 Let&apos;s meet at Starbucks at 11:30. Wdyt?
+                a.list-group-item.list-group-item-action(href='#!')
+                  .row.align-items-center
+                    .col-auto
+                      // Avatar
+                      img.avatar.rounded-circle(alt='Image placeholder' src='/assets/img/theme/team-2.jpg')
+                    .col.ml--2
+                      .d-flex.justify-content-between.align-items-center
+                        div
+                          h4.mb-0.text-sm Quoc Thinh Le
+                        .text-right.text-muted
+                          small 3 hrs ago
+                      p.text-sm.mb-0 A new issue has been reported for Argon.
+                a.list-group-item.list-group-item-action(href='#!')
+                  .row.align-items-center
+                    .col-auto
+                      // Avatar
+                      img.avatar.rounded-circle(alt='Image placeholder' src='/assets/img/theme/team-3.jpg')
+                    .col.ml--2
+                      .d-flex.justify-content-between.align-items-center
+                        div
+                          h4.mb-0.text-sm Quoc Thinh Le
+                        .text-right.text-muted
+                          small 5 hrs ago
+                      p.text-sm.mb-0 Your posts have been liked a lot.
+                a.list-group-item.list-group-item-action(href='#!')
+                  .row.align-items-center
+                    .col-auto
+                      // Avatar
+                      img.avatar.rounded-circle(alt='Image placeholder' src='/assets/img/theme/team-4.jpg')
+                    .col.ml--2
+                      .d-flex.justify-content-between.align-items-center
+                        div
+                          h4.mb-0.text-sm Quoc Thinh Le
+                        .text-right.text-muted
+                          small 2 hrs ago
+                      p.text-sm.mb-0 Let&apos;s meet at Starbucks at 11:30. Wdyt?
+                a.list-group-item.list-group-item-action(href='#!')
+                  .row.align-items-center
+                    .col-auto
+                      // Avatar
+                      img.avatar.rounded-circle(alt='Image placeholder' src='/assets/img/theme/team-5.jpg')
+                    .col.ml--2
+                      .d-flex.justify-content-between.align-items-center
+                        div
+                          h4.mb-0.text-sm Quoc Thinh Le
+                        .text-right.text-muted
+                          small 3 hrs ago
+                      p.text-sm.mb-0 A new issue has been reported for Argon.
+              // View all
+              a.dropdown-item.text-center.text-primary.font-weight-bold.py-3(href='#!') View all
+          li.nav-item.dropdown
+            a.nav-link(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              i.ni.ni-ungroup
+            .dropdown-menu.dropdown-menu-lg.dropdown-menu-dark.bg-default.dropdown-menu-right
+              .row.shortcuts.px-4
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-red
+                    i.ni.ni-calendar-grid-58
+                  small Calendar
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-orange
+                    i.ni.ni-email-83
+                  small Email
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-info
+                    i.ni.ni-credit-card
+                  small Payments
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-green
+                    i.ni.ni-books
+                  small Reports
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-purple
+                    i.ni.ni-pin-3
+                  small Maps
+                a.col-4.shortcut-item(href='#!')
+                  span.shortcut-media.avatar.rounded-circle.bg-gradient-yellow
+                    i.ni.ni-basket
+                  small Shop
+        ul.navbar-nav.align-items-center.ml-auto.ml-md-0
+          li.nav-item.dropdown
+            a.nav-link.pr-0(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              .media.align-items-center
+                span.avatar.avatar-sm.rounded-circle
+                  img(alt='Image placeholder' src='/assets/img/theme/team-4.jpg')
+                .media-body.ml-2.d-none.d-lg-block
+                  span.mb-0.text-sm.font-weight-bold Quoc Thinh Le
+            .dropdown-menu.dropdown-menu-right
+              .dropdown-header.noti-title
+                h6.text-overflow.m-0 Welcome!
+              a.dropdown-item(href='#!')
+                i.ni.ni-single-02
+                span My profile
+              a.dropdown-item(href='#!')
+                i.ni.ni-settings-gear-65
+                span Settings
+              a.dropdown-item(href='#!')
+                i.ni.ni-calendar-grid-58
+                span Activity
+              a.dropdown-item(href='#!')
+                i.ni.ni-support-16
+                span Support
+              .dropdown-divider
+              button#logout-btn.dropdown-item
+                i.ni.ni-user-run
+                span Logout

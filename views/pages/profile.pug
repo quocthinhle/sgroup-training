@@ -1,0 +1,116 @@
+extends ../layout/main.pug
+
+block header
+  .header.pb-6.d-flex.align-items-center(style='min-height: 500px; background-image: url(/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;')
+    // Mask
+    span.mask.bg-gradient-default.opacity-8
+    // Header container
+    .container-fluid.d-flex.align-items-center
+      .row
+        .col-lg-7.col-md-10
+          h1.display-2.text-white Hello Jesse
+          p.text-white.mt-0.mb-5
+            | This is your profile page. You can see the progress you&apos;ve made with your work and manage your projects or assigned tasks
+          a.btn.btn-neutral(href='#!') Edit profile
+  // Page content
+block content
+  .container-fluid.mt--6
+    .row
+      .col-xl-4.order-xl-2
+        .card.card-profile
+          img.card-img-top(src='/assets/img/theme/img-1-1000x600.jpg' alt='Image placeholder')
+          .row.justify-content-center
+            .col-lg-3.order-lg-2
+              .card-profile-image
+                a(href='#')
+                  img.rounded-circle(src='/assets/img/theme/team-4.jpg')
+          .card-header.text-center.border-0.pt-8.pt-md-4.pb-0.pb-md-4
+            .d-flex.justify-content-between
+              a.btn.btn-sm.btn-info.mr-4(href='#') Connect
+              a.btn.btn-sm.btn-default.float-right(href='#') Message
+          .card-body.pt-0
+            .row
+              .col
+                .card-profile-stats.d-flex.justify-content-center
+                  div
+                    span.heading 22
+                    span.description Friends
+                  div
+                    span.heading 10
+                    span.description Photos
+                  div
+                    span.heading 89
+                    span.description Comments
+            .text-center
+              h5.h3
+                | Jessica Jones
+                span.font-weight-light , 27
+              .h5.font-weight-300
+                i.ni.location_pin.mr-2
+                | Bucharest, Romania
+              .h5.mt-4
+                i.ni.business_briefcase-24.mr-2
+                | Solution Manager - Creative Tim Officer
+              div
+                i.ni.education_hat.mr-2
+                | University of Computer Science
+      .col-xl-8.order-xl-1
+        .card
+          .card-header
+            .row.align-items-center
+              .col-8
+                h3.mb-0 Edit profile 
+              .col-4.text-right
+                a.btn.btn-sm.btn-primary(href='#!') Settings
+          .card-body
+            form
+              h6.heading-small.text-muted.mb-4 User information
+              .pl-lg-4
+                .row
+                  .col-lg-6
+                    .form-group
+                      label.form-control-label(for='input-username') Username
+                      input#input-username.form-control(type='text' placeholder='Username' value='lucky.jesse')
+                  .col-lg-6
+                    .form-group
+                      label.form-control-label(for='input-email') Email address
+                      input#input-email.form-control(type='email' placeholder='jesse@example.com')
+                .row
+                  .col-lg-6
+                    .form-group
+                      label.form-control-label(for='input-first-name') First name
+                      input#input-first-name.form-control(type='text' placeholder='First name' value='Lucky')
+                  .col-lg-6
+                    .form-group
+                      label.form-control-label(for='input-last-name') Last name
+                      input#input-last-name.form-control(type='text' placeholder='Last name' value='Jesse')
+              hr.my-4
+              // Address
+              h6.heading-small.text-muted.mb-4 Contact information
+              .pl-lg-4
+                .row
+                  .col-md-12
+                    .form-group
+                      label.form-control-label(for='input-address') Address
+                      input#input-address.form-control(placeholder='Home Address' value='Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09' type='text')
+                .row
+                  .col-lg-4
+                    .form-group
+                      label.form-control-label(for='input-city') City
+                      input#input-city.form-control(type='text' placeholder='City' value='New York')
+                  .col-lg-4
+                    .form-group
+                      label.form-control-label(for='input-country') Country
+                      input#input-country.form-control(type='text' placeholder='Country' value='United States')
+                  .col-lg-4
+                    .form-group
+                      label.form-control-label(for='input-country') Postal code
+                      input#input-postal-code.form-control(type='number' placeholder='Postal code')
+              hr.my-4
+              // Description
+              h6.heading-small.text-muted.mb-4 About me
+              .pl-lg-4
+                .form-group
+                  label.form-control-label About Me
+                  textarea.form-control(rows='4' placeholder='A few words about you ...') A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.
+    include ../components/footer.pug

@@ -1,0 +1,4 @@
+export const USER_STATUS = {
+	AVAILABLE: "AVAILABLE",
+	BANNED: "BANNED"
+}

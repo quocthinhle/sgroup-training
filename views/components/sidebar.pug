@@ -1,0 +1,59 @@
+nav#sidenav-main.sidenav.navbar.navbar-vertical.fixed-left.navbar-expand-xs.navbar-light.bg-white
+  .scrollbar-inner
+    // Brand
+    .sidenav-header.align-items-center
+      a.navbar-brand(href='javascript:void(0)')
+        img.navbar-brand-img(src='/assets/img/brand/blue.png' alt='...')
+    .navbar-inner
+      // Collapse
+      #sidenav-collapse-main.collapse.navbar-collapse
+        // Nav items
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link.active(href='/')
+              i.ni.ni-tv-2.text-primary
+              span.nav-link-text Dashboard
+          li.nav-item
+            a.nav-link(href='/map')
+              i.ni.ni-pin-3.text-primary
+              span.nav-link-text Google
+          li.nav-item
+            a.nav-link(href='/profile')
+              i.ni.ni-single-02.text-yellow
+              span.nav-link-text Profile
+          li.nav-item
+            a.nav-link(href='/user')
+              i.ni.ni-bullet-list-67.text-default
+              span.nav-link-text Users
+          li.nav-item
+            a.nav-link(href='/articles')
+              i.ni.ni-atom.text-green
+              span.nav-link-text Articles
+          li.nav-item
+            a.nav-link(href='/icons')
+              i.ni.ni-planet.text-orange
+              span.nav-link-text Icons
+
+        // Divider
+        hr.my-3
+        // Heading
+        h6.navbar-heading.p-0.text-muted
+          span.docs-normal Documentation
+        // Navigation
+        ul.navbar-nav.mb-md-3
+          li.nav-item
+            a.nav-link(href='https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.pug' target='_blank')
+              i.ni.ni-spaceship
+              span.nav-link-text Getting started
+          li.nav-item
+            a.nav-link(href='https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.pug' target='_blank')
+              i.ni.ni-palette
+              span.nav-link-text Foundation
+          li.nav-item
+            a.nav-link(href='https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.pug' target='_blank')
+              i.ni.ni-ui-04
+              span.nav-link-text Components
+          li.nav-item
+            a.nav-link(href='https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.pug' target='_blank')
+              i.ni.ni-chart-pie-35
+              span.nav-link-text Plugins
