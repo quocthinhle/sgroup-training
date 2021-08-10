@@ -1,5 +1,3 @@
-console.log("Login page")
-
 document.getElementById("loginForm").addEventListener("submit", async () => {
 	event.preventDefault(); // Motherfucker i forgot it. Cost me 3 hours to figure it out.
 
@@ -35,14 +33,15 @@ document.getElementById("loginForm").addEventListener("submit", async () => {
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+		console.log("Signing out")
 	});
-	console.log("Signed out")
+
 }
 
 async function onSignIn(googleUser) {
 	var id_token = googleUser.getAuthResponse().id_token;
-
+	console.log(id_token);
+	
 	const response = await fetch('/api/auth/google/login', {
 		headers: {
 			'Accept': 'application/json, text/plain, */*',
@@ -53,14 +52,13 @@ async function onSignIn(googleUser) {
 	});
 
 	signOut();
-	console.log(id_token);
 
 	if (response.ok) {
 		const data = await response.json();
 		const token = data["user_token"];
+		console.log(token);
 		localStorage.setItem("user", token);
 		location.href = "/";
-		return;
 	} else {
 		const {data} = await response.json();
 		console.log(data);
@@ -68,5 +66,7 @@ async function onSignIn(googleUser) {
 		location.href = "/register";
 	}
 
-
+	var auth2 = gapi.auth2.getAuthInstance();
+	auth2.disconnect();
 }
+
