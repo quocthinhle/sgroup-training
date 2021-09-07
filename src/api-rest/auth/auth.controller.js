@@ -1,4 +1,5 @@
-import { OK } from "http-status";
+import { OK, UNAUTHORIZED } from "http-status";
+import { JwtService } from "./services/jwt.service";
 import { httpExceptionHandler } from "../../libs/http-exception/handler/exception.handler"
 import { loginInput } from "./dto/login-input";
 import { registerInput } from "./dto/register-input";
@@ -48,6 +49,19 @@ export class AuthController {
 		} catch(error) {
 			return httpExceptionHandler(error)(res);
 		}
+	}
+
+	authorization = (req, res, next) => {
+		const userToken = req.headers['authorization'].split(' ')[1];
+		const decodedToken = JwtService.getInstance().decode(userToken);
+		const roles = decodedToken['roles'];
+		let isAuthorized = false;
+		roles.forEach(element => {
+			if (element['id'] == 1 || element['id'] == 2) {
+				isAuthorized = true;
+			}
+		});
+		return isAuthorized? next() : res.status(UNAUTHORIZED);
 	}
 }
 

@@ -1,16 +1,28 @@
 var totalUser;
 
+function getUserToken() {
+	const token = JSON.parse(localStorage.getItem("user")).accessToken;
+	return token;
+}
+
 async function getTotalUser() {
 	const response = await fetch("/api/user/count", {
 		method: "GET",
 		headers: {
 			'Accept': 'application/json, text/plain, */*',
-				'Content-type': 'application/json'
+			'Content-type': 'application/json',
+			'Authorization': 'Bearer ' + getUserToken()
 		}
 	});
 
-	const data = await response.json();
-	totalUser = data.total;
+	if (response.ok) {
+		const data = await response.json();
+		totalUser = data.total;
+	} else {
+		alert("You dont have permission to access this resources");
+		location.href = "/";
+		return;
+	}
 }
 
 function refreshTable() {
@@ -46,13 +58,15 @@ async function loadDataTable(choosenPage, perPage, sortType, searchContent, i) {
 	const response  = await fetch(queryString, {
 		headers: {
 			'Accept': 'application/json, text/plain, */*',
-			'Content-type': 'application/json'
+			'Content-type': 'application/json',
+			'Authorization': 'Bearer ' + getUserToken()
 		},
 		method: "GET"
 	});
 
 	if (!response.ok) {
-		alert("An error has occurred");
+		alert("You dont have permission to access this resources");
+		location.href = "/";
 		return;
 	}
 	const data = await response.json();
