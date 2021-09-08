@@ -53,15 +53,21 @@ export class AuthController {
 
 	authorization = (req, res, next) => {
 		const userToken = req.headers['authorization'].split(' ')[1];
-		const decodedToken = JwtService.getInstance().decode(userToken);
-		const roles = decodedToken['roles'];
-		let isAuthorized = false;
-		roles.forEach(element => {
-			if (element['id'] == 1 || element['id'] == 2) {
-				isAuthorized = true;
-			}
-		});
-		return isAuthorized? next() : res.status(UNAUTHORIZED);
+		
+		try {
+			const decodedToken = JwtService.getInstance().decode(userToken);
+			const roles = decodedToken['roles'];
+			let isAuthorized = false;
+			roles.forEach(element => {
+				if (element['id'] == 1 || element['id'] == 2) {
+					isAuthorized = true;
+				}
+			});
+			return isAuthorized? next() : res.status(UNAUTHORIZED);
+			
+		} catch(err) {
+			return res.status(UNAUTHORIZED);
+		}
 	}
 }
 

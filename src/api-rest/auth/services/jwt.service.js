@@ -1,4 +1,4 @@
-import { sign, decode } from 'jsonwebtoken';
+import { sign, decode, verify } from 'jsonwebtoken';
 import { ConfigService } from "../../../libs/config/config.service";
 import { logger } from '../../../common/utils/winston';
 
@@ -31,6 +31,11 @@ export class JwtService {
 	}
 
 	decode(token) {
-		return decode(token);
+		try {
+			verify(token, this.secret);
+			return decode(token);
+		} catch(err) {
+			throw err;
+		}
 	}
 }
